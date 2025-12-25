@@ -6,7 +6,7 @@ import Link from 'next/link'
 function Footer() {
   const year: number = new Date().getFullYear();
   return (
-    <div className="bg-white border-0 border-white funnel-font">
+    <div className="bg-sky-50 border-0 border-white funnel-font">
       <div className='container mx-auto px-6 py-12'>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8 mb-8'>
           <div>
