@@ -1,49 +1,71 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "16px 32px",
-        borderBottom: "1px solid #e5e7eb",
-      }}
-    >
-      {/* Left: Logo + Name */}
-      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        {/* Logo placeholder */}
-        <div
-          style={{
-            width: "32px",
-            height: "32px",
-            backgroundColor: "#e5e7eb",
-            borderRadius: "6px",
-          }}
-        />
-        <span style={{ fontWeight: 600 }}>TU Codes</span>
-      </div>
+    <nav className={`sticky top-0 z-50 bg-white backdrop-blur-sm bg-white/95 transition-shadow duration-300 ${isScrolled ? "shadow-md" : ""}`}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Left: Logo + Name */}
+          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            {/* Logo */}
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">TC</span>
+            </div>
+            <span className="text-xl font-semibold text-gray-900">TU Codes</span>
+          </Link>
 
-      {/* Right: Navigation */}
-      <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/events">Events</Link>
-        <Link href="/projects">Projects</Link>
-
-        {/* Join Us Button */}
-        <Link
-          href="/join"
-          style={{
-            padding: "8px 16px",
-            border: "1px solid #000",
-            borderRadius: "6px",
-            fontWeight: 500,
-          }}
-        >
-          Join Us
-        </Link>
+          {/* Right: Navigation Links + Join Us Button */}
+          <div className="hidden md:flex items-center gap-8">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+            >
+              Home
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/events"
+              className="text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+            >
+              Events
+            </Link>
+            <Link
+              href="/projects"
+              className="text-gray-700 hover:text-blue-600 font-semibold transition-colors"
+            >
+              Projects
+            </Link>
+            {/* Join Us Button */}
+            <Link
+              href="/join"
+              className="bg-gradient-to-r from-blue-400 to-blue-700 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all hover:shadow-lg hover:scale-105"
+            >
+              Join Us
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   );
