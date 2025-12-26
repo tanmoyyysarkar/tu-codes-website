@@ -74,6 +74,18 @@ export default function Team() {
                 twitter: "#",
             },
         },
+        {
+            name: "Rahul Yadav",
+            role: "Technical Lead",
+            quote: "Leading with clarity, building with discipline",
+            image: "/team/member6.jpg",
+            borderColor: "border-pink-500",
+            socials: {
+                linkedin: "https://www.linkedin.com/in/rahul-yadav-b37648238/",
+                github: "https://github.com/Coder-Rahul-Y",
+                twitter: "#",
+            },
+        },
     ];
 
     return (
