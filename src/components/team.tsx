@@ -172,7 +172,7 @@ export default function Team() {
                         We're always looking for passionate individuals to join us and make a difference!
                     </p>
                     <a
-                        href="/join"
+                        href="/register"
                         className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all hover:shadow-lg hover:scale-105"
                     >
                         Apply Now
