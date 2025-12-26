@@ -8,6 +8,7 @@ import { createProject } from "../../lib/actions";
 
 export default function CreateProjectCard() {
   const [projectName, setProjectName] = useState("");
+  const [githubLink, setGithubLink] = useState("");
   const [projectDescription, setProjectDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
 
@@ -32,6 +33,7 @@ export default function CreateProjectCard() {
     try {
       const created = await createProject(
         projectName.trim(),
+        githubLink.trim(),
         projectDescription.trim(),
         imageUrl.trim()
       );
@@ -65,6 +67,14 @@ export default function CreateProjectCard() {
         />
       </div>
 
+      <div className="space-y-2">
+        <Label htmlFor="github-link">GitHub Link</Label>
+        <Input
+          id="github-link"
+          value={githubLink}
+          onChange={(e) => setGithubLink(e.target.value)}
+        />
+      </div>
       <div className="space-y-2">
         <Label htmlFor="project-image">Image URL</Label>
         <Input

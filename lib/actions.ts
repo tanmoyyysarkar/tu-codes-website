@@ -4,6 +4,7 @@ import { createSupabaseServer } from "./supabase/server";
 
 export async function createProject(
   title: string,
+  github_link: string,
   description: string,
   image_url: string
 ) {
@@ -17,6 +18,7 @@ export async function createProject(
     .insert([
       {
         title,
+        github_link,
         description,
         image_url,
         owner: userData.user.user_metadata.display_name, 
