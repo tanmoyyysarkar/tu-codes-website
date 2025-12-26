@@ -63,10 +63,6 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
                 className="object-cover"
               />
             </div>
-
-            <div className="text-xs text-gray-500 mt-3">
-              {p.created_at ? new Date(p.created_at).toLocaleString() : ""}
-            </div>
           </div>
         );
       })}
