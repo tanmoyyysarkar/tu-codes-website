@@ -34,24 +34,7 @@ function LoginPage() {
             <p className="text-muted-foreground">Join us</p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-foreground font-medium">
-                Email Address
-              </Label>
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="hello@example.com"
-                  value={email}
-                  onChange={(e:  React.FormEvent<HTMLFormElement>) => setEmail(e.currentTarget.value)}
-                  className="pl-12"
-                />
-              </div>
-            </div>
-
-
+            
             <div className="space-y-2">
               <Label htmlFor="name" className="text-foreground font-medium">
                 Name
@@ -64,6 +47,23 @@ function LoginPage() {
                   placeholder="John Doe"
                   value={name}
                   onChange={(e:  React.FormEvent<HTMLFormElement>) => setName(e.currentTarget.value)}
+                  className="pl-12"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="email" className="text-foreground font-medium">
+                Email Address
+              </Label>
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="hello@example.com"
+                  value={email}
+                  onChange={(e:  React.FormEvent<HTMLFormElement>) => setEmail(e.currentTarget.value)}
                   className="pl-12"
                 />
               </div>
