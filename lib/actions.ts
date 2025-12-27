@@ -68,6 +68,8 @@ export const registerEvent = async(event_name: string) => {
 
   const { data: userData } = await supabase.auth.getUser();
 
+  if (!userData.user) throw new Error("User not authenticated");
+
   const { data, error } = await supabase.from("rsvpEvents").insert([{ name: userData.user.user_metadata.display_name, event_name },]).select().single();
 
   if(error) throw new Error('Failed to register to the event');
