@@ -21,7 +21,7 @@ export async function createProject(
         github_link,
         description,
         image_url,
-        owner: userData.user.user_metadata.display_name, 
+        owner: userData.user.user_metadata.display_name,
       },
     ])
     .select()
@@ -30,4 +30,35 @@ export async function createProject(
   if (error) throw new Error(error.message);
 
   return data;
+}
+
+export async function deleteProject(projectId: string | number) {
+  const supabase = await createSupabaseServer();
+
+  const { data: userData } = await supabase.auth.getUser();
+  if (!userData.user) throw new Error("User not authenticated");
+
+  // First, get the project to check ownership
+  const { data: project, error: fetchError } = await supabase
+    .from("projects")
+    .select("owner")
+    .eq("id", projectId)
+    .single();
+
+  if (fetchError) throw new Error("Project not found");
+
+  // Check if the current user is the owner
+  if (project.owner !== userData.user.user_metadata.display_name) {
+    throw new Error("You can only delete your own projects");
+  }
+
+  // Delete the project
+  const { error } = await supabase
+    .from("projects")
+    .delete()
+    .eq("id", projectId);
+
+  if (error) throw new Error(error.message);
+
+  return { success: true };
 }
