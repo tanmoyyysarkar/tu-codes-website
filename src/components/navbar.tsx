@@ -64,6 +64,7 @@ export default function Navbar() {
             >
               Join Us
             </Link>
+            {/*hello world, making some changes*/}
           </div>
         </div>
       </div>
