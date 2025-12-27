@@ -41,6 +41,8 @@ export const fetchEvents = async() => {
 
     if(error) throw new Error('Failed to fetch events');
 
+    console.log(data);
+
     return data;
   }
   catch(err: any){
