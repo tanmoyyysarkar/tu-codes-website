@@ -2,39 +2,50 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import CreateProjectModal from "@/components/projects"; // your modal component
+import CreateProjectModal from "@/components/projects";
 
 export default function ProjectsHeaderClient({ projectsCount }: { projectsCount: number }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      <section className="bg-white py-16 md:py-20 relative">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Our{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                Projects
-              </span>
-            </h1>
+      <section className="relative overflow-hidden bg-white py-14">
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">
+                <span className="h-2 w-2 rounded-full bg-[#1a73e8]" />
+                Showcase • TU Codes
+              </div>
 
-            <div className="inline-block">
-              <div className="p-6 rounded-2xl bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200">
-                <div className="text-5xl font-bold text-blue-600 mb-2">{projectsCount}</div>
-                <div className="text-gray-700 font-medium text-lg">Projects Showcased</div>
+              <h1 className="mt-4 text-4xl font-semibold tracking-tight text-gray-900">
+                Projects
+              </h1>
+
+              <p className="mt-2 text-sm leading-6 text-gray-600">
+                Student-built projects — shipped, documented, and ready to show.
+              </p>
+
+              {/* small stat row (not ugly big) */}
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1 text-sm text-gray-700 shadow-sm">
+                <span className="font-semibold text-gray-900">{projectsCount}</span>
+                <span className="text-gray-500">projects listed</span>
               </div>
             </div>
+
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="
+                inline-flex items-center justify-center gap-2
+                rounded-xl bg-[#1a73e8] px-5 py-3 text-sm font-semibold text-white
+                shadow-sm transition hover:bg-[#1558b0]
+              "
+            >
+              <Plus className="h-4 w-4" />
+              Add project
+            </button>
           </div>
         </div>
-
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="absolute top-8 right-8 z-40 w-14 h-14 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center group"
-          aria-label="Create new project"
-        >
-          <Plus className="w-6 h-6 group-hover:rotate-90 transition-transform duration-300" />
-        </button>
       </section>
 
       <CreateProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

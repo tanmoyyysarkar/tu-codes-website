@@ -11,10 +11,10 @@ export default async function ProjectsPage() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-white">
       <ProjectsHeaderClient projectsCount={projectsCount ?? 0} />
 
-      <section className="py-12 md:py-16">
+      <section className="bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <ProjectGrid projects={projects ?? []} />
         </div>
