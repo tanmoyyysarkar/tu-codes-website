@@ -6,7 +6,7 @@ export default function Team() {
             name: "Akshay R",
             role: "Lead",
             quote: "Code is poetry written in logic",
-            image: "/team/member1.jpg", // replace this with actual image 
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
             borderColor: "border-blue-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/akshay-r-52723730b/",
@@ -18,7 +18,7 @@ export default function Team() {
             name: "Rahul Yadav",
             role: "Technical Lead",
             quote: "Leading with clarity, building with discipline",
-            image: "/team/member6.jpg",
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
             borderColor: "border-pink-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/rahul-yadav-b37648238/",
@@ -30,7 +30,7 @@ export default function Team() {
             name: "Shujan Mashuq Islam",
             role: "Development Lead",
             quote: "I hope it works on my machine",
-            image: "/team/member2.jpg",
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
             borderColor: "border-red-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/shujan-islam-954236318/",
@@ -42,7 +42,7 @@ export default function Team() {
             name: "Yash Sharma",
             role: "Management Lead",
             quote: "Building the future, one line at a time",
-            image: "/team/member3.jpg",
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
             borderColor: "border-green-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/yash-sharma-08583a338/",
@@ -51,22 +51,10 @@ export default function Team() {
             },
         },
         {
-            name: "Mirza Aslam Beg",
-            role: "Programming Lead",
-            quote: "Creating experiences that inspire",
-            image: "/team/member4.jpg",
-            borderColor: "border-yellow-500",
-            socials: {
-                linkedin: "https://www.linkedin.com/in/aslambeg/",
-                github: "https://github.com/Aslam554",
-                twitter: "#",
-            },
-        },
-        {
             name: "Areesha Khan",
             role: "Management Lead",
             quote: "Lead smart. Manage strong. Inspire always",
-            image: "/team/member5.jpg",
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
             borderColor: "border-purple-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/areesha-khan-b635b8291/",
@@ -78,11 +66,23 @@ export default function Team() {
             name: "Anwesha Saharia",
             role: "Design Lead",
             quote: "Design is not just what it looks like",
-            image: "/team/member6.jpg",
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
             borderColor: "border-pink-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/anwesha-saharia-8119b1289/",
                 github: "https://github.com/AnweshaS25",
+                twitter: "#",
+            },
+        },
+        {
+            name: "Mirza Aslam Beg",
+            role: "Programming Lead",
+            quote: "Creating experiences that inspire",
+            image: "https://www.esquire.com.au/wp-content/uploads/2024/10/marty-supreme-hero-2.jpg",
+            borderColor: "border-yellow-500",
+            socials: {
+                linkedin: "https://www.linkedin.com/in/aslambeg/",
+                github: "https://github.com/Aslam554",
                 twitter: "#",
             },
         },
@@ -108,10 +108,7 @@ export default function Team() {
                             {/* Profile Picture - Circular */}
                             <div className="w-32 h-32 mx-auto mb-6">
                                 <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center overflow-hidden">
-                                    {/* Placeholder - Replace with actual image */}
-                                    <span className="text-4xl font-bold text-gray-600">
-                                        {member.name.charAt(0)}
-                                    </span>
+                                  <img src={member.image} />
                                 </div>
                             </div>
 
