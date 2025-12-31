@@ -2,10 +2,26 @@
 
 import { useState } from "react";
 import { Plus } from "lucide-react";
+import { createSupabaseBrowser } from "../../../lib/supabase/client";
 import CreateProjectModal from "@/components/projects";
+import AuthRequiredPopup from "@/components/ui/AuthRequiredPopup";
 
 export default function ProjectsHeaderClient({ projectsCount }: { projectsCount: number }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showAuthPopup, setShowAuthPopup] = useState(false);
+
+  const handleAddProjectClick = async () => {
+    // Check if user is authenticated
+    const supabase = createSupabaseBrowser();
+    const { data: userData } = await supabase.auth.getUser();
+    
+    if (!userData.user) {
+      setShowAuthPopup(true);
+      return;
+    }
+
+    setIsModalOpen(true);
+  };
 
   return (
     <>
@@ -29,7 +45,7 @@ export default function ProjectsHeaderClient({ projectsCount }: { projectsCount:
             </div>
 
             <button
-              onClick={() => setIsModalOpen(true)}
+              onClick={handleAddProjectClick}
               className="
                 inline-flex items-center justify-center gap-2
                 rounded-xl bg-[#1a73e8] px-5 py-3 text-sm font-semibold text-white
@@ -44,6 +60,9 @@ export default function ProjectsHeaderClient({ projectsCount }: { projectsCount:
       </section>
 
       <CreateProjectModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      {showAuthPopup && (
+        <AuthRequiredPopup onClose={() => setShowAuthPopup(false)} />
+      )}
     </>
   );
 }
