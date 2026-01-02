@@ -27,7 +27,7 @@ export default function Team() {
         {
             name: "Shujan Mashuq Islam",
             role: "Development Lead",
-            quote: "Innovation distinguishes leaders from followers",
+            quote: "Hope it works on my machine",
             image: "/shujan.jpeg",
             borderColor: "border-red-500",
             socials: {
