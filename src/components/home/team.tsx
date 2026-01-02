@@ -89,9 +89,6 @@ export default function Team() {
                     <h2 className="text-2xl md:text-5xl font-bold text-gray-900 mb-4">
                         Meet Our Team
                     </h2>
-                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                        Team members of the TU Codes club 😁.
-                    </p>
                 </div>
 
                 {/* Team Grid */}
