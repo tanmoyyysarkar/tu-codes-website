@@ -6,7 +6,7 @@ export default function Team() {
             name: "Akshay R",
             role: "President",
             quote: "Code is poetry written in logic",
-            image: "https://drive.google.com/uc?id=1FF5W26qKflXO7GanJpp9zlGm2fBixAeI",
+            image: "/Akshay.jpeg",
             borderColor: "border-blue-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/akshay-r-52723730b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
@@ -17,7 +17,7 @@ export default function Team() {
             name: "Rahul Yadav",
             role: "Technical Lead",
             quote: "The Creator must have been a programmer",
-            image: "https://drive.google.com/uc?id=1mPA78WnnAWLAFP4UhgqRGJEC20PyjKG8",
+            image: "/Rahul.jpeg",
             borderColor: "border-gray-500",
             socials: {
                 linkedin: "https://in.linkedin.com/in/rahul-yadav-b37648238",
@@ -28,7 +28,7 @@ export default function Team() {
             name: "Shujan Mashuq Islam",
             role: "Development Lead",
             quote: "Innovation distinguishes leaders from followers",
-            image: "https://drive.google.com/uc?id=1mPA78WnnAWLAFP4UhgqRGJEC20PyjKG8",
+            image: "/shujan.jpeg",
             borderColor: "border-red-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/shujan-islam-954236318/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
@@ -39,7 +39,7 @@ export default function Team() {
             name: "Yash Sharma",
             role: "Management Lead",
             quote: "Building the future, one line at a time",
-            image: "https://drive.google.com/uc?id=1CsyNFNWaLFeNhhskv6vhOKkIvyLqy8QP",
+            image: "/Yash.jpeg",
             borderColor: "border-green-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/yash-sharma-08583a338/",
@@ -50,7 +50,7 @@ export default function Team() {
             name: "Areesha Khan",
             role: "Management Lead",
             quote: "Lead smart. Manage strong. Inspire always.",
-            image: "https://drive.google.com/uc?id=14gMdOIfJ8WTQcF0R559ECMYJo-WO-zU5",
+            image: "/Areesha.jpeg",
             borderColor: "border-green-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/areesha-khan-b635b8291/",
@@ -61,7 +61,7 @@ export default function Team() {
             name: "Mirza Aslam Beg",
             role: "Programming Lead",
             quote: "Creating experiences that inspire",
-            image: "https://drive.google.com/uc?id=1Oxmufm2NCN-55CJ9zQiE4m__KBMAJ9Y_",
+            image: "/Aslam.jpeg",
             borderColor: "border-yellow-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/aslambeg/",
@@ -72,7 +72,7 @@ export default function Team() {
             name: "Anwesha Saharia",
             role: "Design Lead",
             quote: "Design is not just what it looks like",
-            image: "https://drive.google.com/uc?id=1Hc5vUlaBh6sRxKVpIEQv1GI2TUU5Mt6g",
+            image: "/Anwesha.jpeg",
             borderColor: "border-purple-500",
             socials: {
                 linkedin: "https://www.linkedin.com/in/anwesha-saharia-8119b1289/",
