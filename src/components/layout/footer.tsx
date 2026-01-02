@@ -85,7 +85,7 @@ export default function Footer() {
 
             {/* Contact */}
             <div className="md:mx-auto">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">Location</h3>
 
               <div className="space-y-4 text-gray-600">
                 <div className="flex items-start gap-3">
@@ -96,15 +96,6 @@ export default function Footer() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-[#1a73e8]" />
-                  <a
-                    href="mailto:tucodes@tezu.ac.in"
-                    className="hover:text-blue-700 transition"
-                  >
-                    tucodes@tezu.ac.in
-                  </a>
-                </div>
               </div>
 
             </div>
