@@ -75,7 +75,7 @@ export default function Navbar() {
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">TC</span>
               </div>
-              <span className="text-xl font-semibold text-gray-900">TU Codes</span>
+              <span className="text-xl font-semibold text-gray-900">TU CODES</span>
             </Link>
 
             {/* Desktop Navigation */}
