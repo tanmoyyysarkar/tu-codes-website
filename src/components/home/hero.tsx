@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { fetchProjectsCount } from '../../../lib/queries';
 
-export default function Hero() {
+export default async function Hero() {
+    const projectsCount = await fetchProjectsCount();
     return (
         <section className="relative bg-white py-20 md:py-32">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -51,7 +53,7 @@ export default function Hero() {
                     {/* Stats or decorative elements */}
                     <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="p-6 rounded-2xl bg-blue-50 border border-blue-100">
-                            <div className="text-4xl font-bold text-blue-600 mb-2">100+</div>
+                            <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
                             <div className="text-gray-600 font-medium">Active Members</div>
                         </div>
                         <div className="p-6 rounded-2xl bg-red-50 border border-red-100">
@@ -59,7 +61,7 @@ export default function Hero() {
                             <div className="text-gray-600 font-medium">Events Conducted</div>
                         </div>
                         <div className="p-6 rounded-2xl bg-green-50 border border-green-100">
-                            <div className="text-4xl font-bold text-green-600 mb-2">20+</div>
+                            <div className="text-4xl font-bold text-green-600 mb-2">{ projectsCount }</div>
                             <div className="text-gray-600 font-medium">Projects Built</div>
                         </div>
                     </div>
